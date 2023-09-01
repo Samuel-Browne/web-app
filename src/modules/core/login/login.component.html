@@ -1,5 +1,6 @@
 <form (ngSubmit)="onSubmit()">
-    <div>
+    <div class="row">
+        <div class="col-2">
         <h1>Login</h1>
         <mat-form-field>
             <mat-label>Username</mat-label>
@@ -10,5 +11,6 @@
             <input matInput formControlName="password">
         </mat-form-field>
         <button mat-button type="submit">Login</button>
+        </div>
     </div>
 </form>
