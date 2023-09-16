@@ -3,9 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from 'src/modules/core/about/about.component';
 import { HomeComponent } from 'src/modules/core/home/home.component';
 import { LoginComponent } from 'src/modules/core/login/login.component';
+import { DefaultLayoutComponent } from 'src/modules/shared/layouts/default-layout/default-layout.component';
 
 const routes: Routes = [
-  {path: '', component: LoginComponent},
+  {path: '', component: DefaultLayoutComponent, children: [
+    {path: 'dashboard', component: HomeComponent}
+  ]},
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent}
