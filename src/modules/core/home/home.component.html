@@ -1,10 +1,83 @@
 <div class="container">
   <div class="row">
     <div class="col=3">
-      <h1>
-        POKEMON
-      </h1>
-      <p>Find your next pokemon</p>
+      <h1>STARTERS</h1>
+      <p>Generation 1 starter pokemon</p>
     </div>
   </div>
+  <div class="row mt-1 bg-dark rounded">    
+    <div class="col" *ngFor="let sprite of firstGenSpriteUrls; index as i">
+      <a href="/i"><img src="{{ sprite }}"/></a>
+      
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col=3">      
+      <p>Generation 2 starter pokemon</p>
+    </div>
+  </div>
+
+  <div class="row mt-1 bg-dark rounded">    
+    <div class="col" *ngFor="let sprite of secondGenSpriteUrls">
+      <img src="{{ sprite }}" (click)="onClick()" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col=3">      
+      <p>Generation 3 starter pokemon</p>
+    </div>
+  </div>
+  <div class="row mt-1 bg-dark rounded">    
+    <div class="col" *ngFor="let sprite of thirdGenSpriteUrls">
+      <img src="{{ sprite }}" (click)="onClick()" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col=3">      
+      <p>Generation 4 starter pokemon</p>
+    </div>
+  </div>
+  <div class="row mt-1 bg-dark rounded">    
+    <div class="col" *ngFor="let sprite of fourthGenSpriteUrls">
+      <img src="{{ sprite }}" (click)="onClick()" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col=3">      
+      <p>Generation 5 starter pokemon</p>
+    </div>
+  </div>
+  <div class="row mt-1 bg-dark rounded">    
+    <div class="col" *ngFor="let sprite of fifthGenSpriteUrls">
+      <img src="{{ sprite }}" (click)="onClick()" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col=3">      
+      <p>Generation 6 starter pokemon</p>
+    </div>
+  </div>
+  <div class="row mt-1 bg-dark rounded">    
+    <div class="col" *ngFor="let sprite of sixthGenSpriteUrls">
+      <img src="{{ sprite }}" (click)="onClick()" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col=3">      
+      <p>Generation 7 starter pokemon</p>
+    </div>
+  </div>
+  <div class="row mt-1 bg-dark rounded">    
+    <div class="col" *ngFor="let sprite of seventhGenSpriteUrls">
+      <img src="{{ sprite }}" (click)="onClick()" />
+    </div>
+  </div>
+
+
 </div>

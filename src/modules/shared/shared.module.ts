@@ -5,6 +5,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DefaultLayoutComponent } from './layouts/default-layout/default-layout.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -20,6 +21,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
   imports: [
     CommonModule,
     AppRoutingModule,
+    HttpClientModule
   ]
   
 })
