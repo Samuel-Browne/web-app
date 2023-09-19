@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SubSink } from 'subsink';
 import { PokemonService } from 'src/modules/shared/services/pokemon.service';
+import { finalize, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,6 @@ export class HomeComponent {
   pictureUrl: string = '';
 
   firstGenSpriteUrls: string[] = [];
-
   secondGenSpriteUrls: string[] = [];
 
   thirdGenSpriteUrls: string[] = [];
@@ -23,59 +23,67 @@ export class HomeComponent {
   seventhGenSpriteUrls: string[] = [];
 
   constructor(private pokemonService: PokemonService) {
-    for (var i = 0; i < 10; i++) {
+
+    for (let i = 0; i < 9; i++) {
       this.subs.sink = this.pokemonService
-        .getPokemonData(i)
+        .getPokemonData(1 + i)
         .subscribe((data) => {
           this.firstGenSpriteUrls.push(data.sprites.front_default);
+          this.firstGenSpriteUrls.sort();
         });
-    }
+    }   
 
-    for (var i = 0; i < 9; i++) {
+    for (let i = 0; i < 9; i++) {
       this.subs.sink = this.pokemonService
         .getPokemonData(152 + i)
         .subscribe((data) => {
           this.secondGenSpriteUrls.push(data.sprites.front_default);
+          this.secondGenSpriteUrls.sort();
         });
     }
 
-    for (var i = 0; i < 9; i++) {
+    for (let i = 0; i < 9; i++) {
       this.subs.sink = this.pokemonService
         .getPokemonData(252 + i)
         .subscribe((data) => {
           this.thirdGenSpriteUrls.push(data.sprites.front_default);
+          this.thirdGenSpriteUrls.sort();
         });
     }
 
-    for (var i = 0; i < 9; i++) {
+    for (let i = 0; i < 9; i++) {
       this.subs.sink = this.pokemonService
         .getPokemonData(387 + i)
         .subscribe((data) => {
           this.fourthGenSpriteUrls.push(data.sprites.front_default);
+          this.fourthGenSpriteUrls.sort();
         });
     }
 
-    for (var i = 0; i < 9; i++) {
+    for (let i = 0; i < 9; i++) {
       this.subs.sink = this.pokemonService
         .getPokemonData(495 + i)
         .subscribe((data) => {
           this.fifthGenSpriteUrls.push(data.sprites.front_default);
+          this.fifthGenSpriteUrls.sort();
         });
     }
 
-    for (var i = 0; i < 9; i++) {
+    for (let i = 0; i < 9; i++) {
       this.subs.sink = this.pokemonService
         .getPokemonData(650 + i)
         .subscribe((data) => {
           this.sixthGenSpriteUrls.push(data.sprites.front_default);
+          this.sixthGenSpriteUrls.sort();
         });
     }
 
-    for (var i = 0; i < 9; i++) {
+    for (let i = 0; i < 9; i++) {
       this.subs.sink = this.pokemonService
         .getPokemonData(722 + i)
         .subscribe((data) => {
           this.seventhGenSpriteUrls.push(data.sprites.front_default);
+          this.seventhGenSpriteUrls.sort();
         });
     }
   }
