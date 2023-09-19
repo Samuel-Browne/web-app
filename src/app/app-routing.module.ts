@@ -7,12 +7,15 @@ import { DefaultLayoutComponent } from 'src/modules/shared/layouts/default-layou
 
 const routes: Routes = [
   {path: '', component: DefaultLayoutComponent, children: [
-    {path: 'dashboard', component: HomeComponent},
-    {path: 'pokemon/:id', component: AboutComponent}
+    {path: '', component: HomeComponent, children: [
+      {path: '', component: HomeComponent}
+    ]},
+    {path: ':id', component: AboutComponent}
   ]},
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'about', component: AboutComponent}
+  {path: 'about', component: AboutComponent},
+  
 ];
 
 

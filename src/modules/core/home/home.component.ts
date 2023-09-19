@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { SubSink } from 'subsink';
 import { PokemonService } from 'src/modules/shared/services/pokemon.service';
 import { finalize, switchMap } from 'rxjs';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -22,7 +24,7 @@ export class HomeComponent {
   sixthGenSpriteUrls: string[] = [];
   seventhGenSpriteUrls: string[] = [];
 
-  constructor(private pokemonService: PokemonService) {
+  constructor(private pokemonService: PokemonService, private router: Router) {
 
     for (let i = 0; i < 9; i++) {
       this.subs.sink = this.pokemonService
@@ -88,7 +90,9 @@ export class HomeComponent {
     }
   }
 
-  onClick() {}
+  onClick(sprite: string) {
+    this.router.navigate(['/' + sprite]);
+  }
 
   ngOnDestroy() {
     this.subs.unsubscribe();

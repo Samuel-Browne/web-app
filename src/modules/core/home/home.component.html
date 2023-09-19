@@ -7,7 +7,7 @@
   </div>
   <div class="row mt-1 bg-dark rounded">    
     <div class="col" *ngFor="let sprite of firstGenSpriteUrls; index as i">
-      <a href="/i"><img src="{{ sprite }}"/></a>
+      <a href="{{'/' + (i + 1)}}"><img src="{{ sprite }}"/></a>
       
     </div>
   </div>
@@ -20,7 +20,7 @@
 
   <div class="row mt-1 bg-dark rounded">    
     <div class="col" *ngFor="let sprite of secondGenSpriteUrls">
-      <img src="{{ sprite }}" (click)="onClick()" />
+      <img src="{{ sprite }}" (click)="onClick(sprite)" />
     </div>
   </div>
 
@@ -31,7 +31,7 @@
   </div>
   <div class="row mt-1 bg-dark rounded">    
     <div class="col" *ngFor="let sprite of thirdGenSpriteUrls">
-      <img src="{{ sprite }}" (click)="onClick()" />
+      <img src="{{ sprite }}" (click)="onClick(sprite)" />
     </div>
   </div>
 
@@ -42,7 +42,7 @@
   </div>
   <div class="row mt-1 bg-dark rounded">    
     <div class="col" *ngFor="let sprite of fourthGenSpriteUrls">
-      <img src="{{ sprite }}" (click)="onClick()" />
+      <img src="{{ sprite }}" (click)="onClick(sprite)" />
     </div>
   </div>
 
@@ -53,7 +53,7 @@
   </div>
   <div class="row mt-1 bg-dark rounded">    
     <div class="col" *ngFor="let sprite of fifthGenSpriteUrls">
-      <img src="{{ sprite }}" (click)="onClick()" />
+      <img src="{{ sprite }}" (click)="onClick(sprite)" />
     </div>
   </div>
 
@@ -64,7 +64,7 @@
   </div>
   <div class="row mt-1 bg-dark rounded">    
     <div class="col" *ngFor="let sprite of sixthGenSpriteUrls">
-      <img src="{{ sprite }}" (click)="onClick()" />
+      <img src="{{ sprite }}" (click)="onClick(sprite)" />
     </div>
   </div>
 
@@ -75,7 +75,7 @@
   </div>
   <div class="row mt-1 bg-dark rounded">    
     <div class="col" *ngFor="let sprite of seventhGenSpriteUrls">
-      <img src="{{ sprite }}" (click)="onClick()" />
+      <img src="{{ sprite }}" (click)="onClick(sprite)" />
     </div>
   </div>
 
