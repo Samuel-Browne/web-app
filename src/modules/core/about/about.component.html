@@ -30,14 +30,42 @@
     </div>
     <div class="col-4">
       <div>Base Stats</div>
-      <ul class="list-group-dark">
-        <li class="list-group-item" *ngFor="let stat of pokemon.stats">
-          {{ stat.stat.name | uppercase }} - {{ stat.base_stat }}
-        </li>
-      </ul>
+      <table class="table table-dark">
+        <thead>
+            <tr>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>HP</th>
+                <td>{{pokemon.stats[0].base_stat}}</td>
+            </tr>
+            <tr>
+                <th>ATTACK</th>
+                <td>{{pokemon.stats[1].base_stat}}</td>
+            </tr>
+            <tr>
+                <th>DEFENSE</th>
+                <td>{{pokemon.stats[2].base_stat}}</td>
+            </tr>
+            <tr>
+                <th>SPECIAL ATTACK</th>
+                <td>{{pokemon.stats[3].base_stat}}</td>
+            </tr>
+            <tr>
+                <th>SPECIAL DEFENSE</th>
+                <td>{{pokemon.stats[4].base_stat}}</td>
+            </tr>
+            <tr>
+                <th>SPEED</th>
+                <td>{{pokemon.stats[5].base_stat}}</td>
+            </tr>
+        </tbody>
+      </table>
     </div>
 
-    <div class="col-2">
+    <!-- <div class="col-2">
       <div>Game Appearences</div>
       <ul class="list-group-dark">
         <li class="list-group-item" *ngFor="let game of pokemon.game_indices">
@@ -45,7 +73,7 @@
         </li>
       </ul>
     </div>
-  </div>
+  </div> -->
 
   <div class="row">
     <div class="col-2">
