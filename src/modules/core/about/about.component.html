@@ -32,35 +32,33 @@
       <div>Base Stats</div>
       <table class="table table-dark">
         <thead>
-            <tr>
-
-            </tr>
+          <tr></tr>
         </thead>
         <tbody>
-            <tr>
-                <th>HP</th>
-                <td>{{pokemon.stats[0].base_stat}}</td>
-            </tr>
-            <tr>
-                <th>ATTACK</th>
-                <td>{{pokemon.stats[1].base_stat}}</td>
-            </tr>
-            <tr>
-                <th>DEFENSE</th>
-                <td>{{pokemon.stats[2].base_stat}}</td>
-            </tr>
-            <tr>
-                <th>SPECIAL ATTACK</th>
-                <td>{{pokemon.stats[3].base_stat}}</td>
-            </tr>
-            <tr>
-                <th>SPECIAL DEFENSE</th>
-                <td>{{pokemon.stats[4].base_stat}}</td>
-            </tr>
-            <tr>
-                <th>SPEED</th>
-                <td>{{pokemon.stats[5].base_stat}}</td>
-            </tr>
+          <tr>
+            <th>HP</th>
+            <td>{{ pokemon.stats[0].base_stat }}</td>
+          </tr>
+          <tr>
+            <th>ATTACK</th>
+            <td>{{ pokemon.stats[1].base_stat }}</td>
+          </tr>
+          <tr>
+            <th>DEFENSE</th>
+            <td>{{ pokemon.stats[2].base_stat }}</td>
+          </tr>
+          <tr>
+            <th>SPECIAL ATTACK</th>
+            <td>{{ pokemon.stats[3].base_stat }}</td>
+          </tr>
+          <tr>
+            <th>SPECIAL DEFENSE</th>
+            <td>{{ pokemon.stats[4].base_stat }}</td>
+          </tr>
+          <tr>
+            <th>SPEED</th>
+            <td>{{ pokemon.stats[5].base_stat }}</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -75,99 +73,115 @@
     </div>
   </div> -->
 
-  <div class="row">
-    <div class="col-2">
-      <p>Pokémon Red</p>
-      <img
-        src="{{
-          pokemon.sprites.versions['generation-i']['red-blue'].front_default
-        }}"
-        width="100"
-        heigh="100"
-      />
-    </div>
+    <div class="row">
+      <div class="col-2">
+        <p>Pokémon Red</p>
+        <img
+          src="{{
+            pokemon.sprites.versions['generation-i']['red-blue'].front_default
+          }}"
+          width="100"
+          heigh="100"
+        />
+      </div>
 
-    <div class="col-2">
-      <p>Pokémon Yellow</p>
-      <img
-        src="{{
-          pokemon.sprites.versions['generation-i'].yellow.front_default
-        }}"
-        width="100"
-        heigh="100"
-      />
-    </div>
+      <div class="col-2">
+        <p>Pokémon Yellow</p>
+        <img
+          src="{{
+            pokemon.sprites.versions['generation-i'].yellow.front_default
+          }}"
+          width="100"
+          heigh="100"
+        />
+      </div>
 
-    <div class="col-2">
-      <p>Pokémon Crystal</p>
-      <img
-        src="{{
-          pokemon.sprites.versions['generation-ii'].crystal.front_default
-        }}"
-        width="100"
-        heigh="100"
-      />
-    </div>
+      <div class="col-2">
+        <p>Pokémon Crystal</p>
+        <img
+          src="{{
+            pokemon.sprites.versions['generation-ii'].crystal.front_default
+          }}"
+          width="100"
+          heigh="100"
+        />
+      </div>
 
-    <div class="col-2">
-      <p>Pokémon Gold</p>
-      <img
-        src="{{ pokemon.sprites.versions['generation-ii'].gold.front_default }}"
-        width="100"
-        heigh="100"
-      />
-    </div>
+      <div class="col-2">
+        <p>Pokémon Gold</p>
+        <img
+          src="{{
+            pokemon.sprites.versions['generation-ii'].gold.front_default
+          }}"
+          width="100"
+          heigh="100"
+        />
+      </div>
 
-    <div class="col-2">
-      <p>Pokémon Silver</p>
-      <img
-        src="{{
-          pokemon.sprites.versions['generation-ii'].silver.front_default
-        }}"
-        width="100"
-        heigh="100"
-      />
-    </div>
+      <div class="col-2">
+        <p>Pokémon Silver</p>
+        <img
+          src="{{
+            pokemon.sprites.versions['generation-ii'].silver.front_default
+          }}"
+          width="100"
+          heigh="100"
+        />
+      </div>
 
-    <div class="col-2">
-      <p>Pokémon Emerald</p>
-      <img
-        src="{{
-          pokemon.sprites.versions['generation-iii'].emerald.front_default
-        }}"
-        width="100"
-        heigh="100"
-      />
-    </div>
+      <div class="col-2">
+        <p>Pokémon Emerald</p>
+        <img
+          src="{{
+            pokemon.sprites.versions['generation-iii'].emerald.front_default
+          }}"
+          width="100"
+          heigh="100"
+        />
+      </div>
 
-    <div class="col-2">
-      <p>Pokémon Diamond Pearl</p>
-      <img
-        src="{{
-          pokemon.sprites.versions['generation-iv']['diamond-pearl']
-            .front_default
-        }}"
-        width="100"
-        heigh="100"
-      />
-    </div>
+      <div class="col-2">
+        <p>Pokémon Diamond Pearl</p>
+        <img
+          src="{{
+            pokemon.sprites.versions['generation-iv']['diamond-pearl']
+              .front_default
+          }}"
+          width="100"
+          heigh="100"
+        />
+      </div>
 
-    <div class="col-2">
-      <p>Pokémon Black White</p>
-      <img
-        src="{{
-          pokemon.sprites.versions['generation-v']['black-white'].front_default
-        }}"
-        width="100"
-        heigh="100"
-      />
-    </div>
+      <div class="col-2">
+        <p>Pokémon Black White</p>
+        <img
+          src="{{
+            pokemon.sprites.versions['generation-v']['black-white']
+              .front_default
+          }}"
+          width="100"
+          heigh="100"
+        />
+      </div>
 
-    <div class="col-2">
+      <div class="col-2">
         <p>Pokémon OmegaRuby AlphaSaphhire</p>
         <img
           src="{{
-            pokemon.sprites.versions['generation-vi']['omegaruby-alphasapphire'].front_default
+            pokemon.sprites.versions['generation-vi']['omegaruby-alphasapphire']
+              .front_default
+          }}"
+          width="100"
+          heigh="100"
+        />
+      </div>
+
+      <div class="col-2">
+        <p>Pokémon X Y</p>
+        <img
+          src="{{
+            pokemon.sprites.versions['generation-vi']['x-y']
+              .front_default
           }}"
           width="100"
           heigh="100"
@@ -178,14 +192,15 @@
         <p>Pokémon Ultra Sun Ultra Moon</p>
         <img
           src="{{
-            pokemon.sprites.versions['generation-vii']['ultra-sun-ultra-moon'].front_default
+            pokemon.sprites.versions['generation-vii']['ultra-sun-ultra-moon']
+              .front_default
           }}"
           width="100"
           heigh="100"
         />
       </div>
 
-      <div class="col-2">
+      <!-- <div class="col-2">
         <p>Pokémon 8</p>
         <img
           src="{{
@@ -194,6 +209,7 @@
           width="100"
           heigh="100"
         />
-      </div>
+      </div> -->
+    </div>
   </div>
 </div>
