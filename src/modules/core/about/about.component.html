@@ -1,4 +1,4 @@
-<div *ngIf="pokemon" class="container mx-auto">
+<div *ngIf="pokemon && species" class="container mx-auto">
   <div class="row">
     <div class="col-6">
       <h1>{{ pokemon.name | uppercase }} {{species.names[0].name}}</h1>
