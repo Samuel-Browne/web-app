@@ -10,6 +10,7 @@ import { PokemonService } from 'src/modules/shared/services/pokemon.service';
 export class AboutComponent {
 
   pokemon: any;
+  species: any;
   id: number;
 
   constructor(private router: ActivatedRoute ,private pokemonService: PokemonService){
@@ -17,6 +18,11 @@ export class AboutComponent {
     this.pokemonService.getPokemonData(this.id).subscribe(data => {
       this.pokemon = data;
       console.log(this.pokemon);
+    });
+
+    this.pokemonService.getPokemonSpeciesData(this.id).subscribe(data => {
+      this.species = data;
+      console.log(this.species);
     });
   
   }

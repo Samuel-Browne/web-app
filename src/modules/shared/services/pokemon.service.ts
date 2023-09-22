@@ -12,5 +12,9 @@ export class PokemonService {
   getPokemonData(pokedexNumber: number): Observable<any>{
     return this.httpClient.get("https://pokeapi.co/api/v2/pokemon/" + pokedexNumber);
   }
-    
+
+  getPokemonSpeciesData(pokedexNumber: number): Observable<any>{
+    return this.httpClient.get("https://pokeapi.co/api/v2/pokemon-species/" + pokedexNumber);
+  }
+
 }
