@@ -1,52 +1,112 @@
- <div *ngIf="pokemon" class="container mx-auto ">
-    <div class="row">
-        <div class="col-6">
-            <h1 >{{pokemon.name | uppercase}}</h1>
-            <h2>Type: {{pokemon.types[0].type.name | uppercase}}</h2>
-            <img src="{{pokemon.sprites.other.dream_world.front_default}}"/>
-        </div>
+<div *ngIf="pokemon" class="container mx-auto">
+  <div class="row">
+    <div class="col-6">
+      <h1>{{ pokemon.name | uppercase }}</h1>
+      <p *ngFor="let type of pokemon.types">
+        {{type.type.name | uppercase}}
+      </p>
+      <div>
+        {{"Weight: " + pokemon.weight + "kg"}}
+      </div>
+      <img src="{{ pokemon.sprites.other.dream_world.front_default }}" />
     </div>
-    
-   
-    <div class="row">
+  </div>
+
+  <div class="row">
+    <div>Game Appearences</div>
+    <div class="col" *ngFor="let game of pokemon.game_indices">
+      <div>
+        {{ game.version.name }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="col-2">
-        <h1>Pokemon Red</h1>
-        <img src="{{pokemon.sprites.versions['generation-i']['red-blue'].front_default}}" width="50%" heigh="20%"/>
+      <h1>Pokemon Red</h1>
+      <img
+        src="{{
+          pokemon.sprites.versions['generation-i']['red-blue'].front_default
+        }}"
+        width="50%"
+        heigh="20%"
+      />
     </div>
 
     <div class="col-2">
-        <h1>Pokemon Yellow</h1>
-        <img src="{{pokemon.sprites.versions['generation-i'].yellow.front_default}}" width="50%" heigh="20%"/>
+      <h1>Pokemon Yellow</h1>
+      <img
+        src="{{
+          pokemon.sprites.versions['generation-i'].yellow.front_default
+        }}"
+        width="50%"
+        heigh="20%"
+      />
     </div>
 
     <div class="col-2">
-        <h1>Pokemon Crystal</h1>
-        <img src="{{pokemon.sprites.versions['generation-ii'].crystal.front_default}}" width="50%" heigh="20%"/>
+      <h1>Pokemon Crystal</h1>
+      <img
+        src="{{
+          pokemon.sprites.versions['generation-ii'].crystal.front_default
+        }}"
+        width="50%"
+        heigh="20%"
+      />
     </div>
 
     <div class="col-2">
-        <h1>Pokemon Gold</h1>
-        <img src="{{pokemon.sprites.versions['generation-ii'].gold.front_default}}" width="50%" heigh="20%"/>
+      <h1>Pokemon Gold</h1>
+      <img
+        src="{{ pokemon.sprites.versions['generation-ii'].gold.front_default }}"
+        width="50%"
+        heigh="20%"
+      />
     </div>
 
     <div class="col-2">
-        <h1>Pokemon Silver</h1>
-        <img src="{{pokemon.sprites.versions['generation-ii'].silver.front_default}}" width="50%" heigh="20%"/>
+      <h1>Pokemon Silver</h1>
+      <img
+        src="{{
+          pokemon.sprites.versions['generation-ii'].silver.front_default
+        }}"
+        width="50%"
+        heigh="20%"
+      />
     </div>
 
     <div class="col-2">
-        <h1>Pokemon Emerald</h1>
-        <img src="{{pokemon.sprites.versions['generation-iii'].emerald.front_default}}" width="50%" heigh="20%"/>
+      <h1>Pokemon Emerald</h1>
+      <img
+        src="{{
+          pokemon.sprites.versions['generation-iii'].emerald.front_default
+        }}"
+        width="50%"
+        heigh="20%"
+      />
     </div>
 
     <div class="col-2">
-        <h1>Pokemon Diamond</h1>
-        <img src="{{pokemon.sprites.versions['generation-iv']['diamond-pearl'].front_default}}" width="50%" heigh="20%"/>
+      <h1>Pokemon Diamond</h1>
+      <img
+        src="{{
+          pokemon.sprites.versions['generation-iv']['diamond-pearl']
+            .front_default
+        }}"
+        width="50%"
+        heigh="20%"
+      />
     </div>
 
     <div class="col-2">
-        <h1>Pokemon Black White</h1>
-        <img src="{{pokemon.sprites.versions['generation-v']['black-white'].front_default}}" width="50%" heigh="20%"/>
+      <h1>Pokemon Black White</h1>
+      <img
+        src="{{
+          pokemon.sprites.versions['generation-v']['black-white'].front_default
+        }}"
+        width="50%"
+        heigh="20%"
+      />
     </div>
-    </div>
- </div>
+  </div>
+</div>
