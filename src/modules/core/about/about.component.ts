@@ -13,8 +13,8 @@ export class AboutComponent {
   species: any;
   id: number;
 
-  constructor(private router: ActivatedRoute ,private pokemonService: PokemonService){
-    this.id = this.router.snapshot.params['id'];
+  constructor(private activatedRoute: ActivatedRoute , private router: Router, private pokemonService: PokemonService){
+    this.id = this.activatedRoute.snapshot.params['id'];
     this.pokemonService.getPokemonData(this.id).subscribe(data => {
       this.pokemon = data;
       console.log(this.pokemon);
@@ -30,7 +30,15 @@ export class AboutComponent {
     });
 
 
+
   
+  }
+  navigateForwards(){
+      this.router.navigate(["" + (this.id++)]);
+  }
+
+  navigateBackwards(){
+    this.router.navigate(["" + (this.id--)]);
   }
   ngOnInit(){}
 
