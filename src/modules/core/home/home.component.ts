@@ -81,7 +81,7 @@ export class HomeComponent {
         });
     }
 
-    for (let i = 722; i <= 1021; i++) {
+    for (let i = 722; i <= 1017; i++) {
       this.subs.sink = this.pokemonService
         .getPokemonData(i)
         .subscribe((data) => {
