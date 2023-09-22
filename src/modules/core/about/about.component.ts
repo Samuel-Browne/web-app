@@ -11,6 +11,8 @@ export class AboutComponent {
   pokemon: any;
   species: any;
   id: number;
+  genus: string = '';
+  flavorText: string = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -30,9 +32,29 @@ export class AboutComponent {
     this.pokemonService.getPokemonSpeciesData(this.id).subscribe((data) => {
       this.species = data;
       console.log(this.species);
-      let ok: string = this.species.flavor_text_entries[0].flavor_text;
+      let ok: string =
+        this.species.flavor_text_entries.length > 0
+          ? this.species.flavor_text_entries[0].flavor_text
+          : '';
+      if (!ok) {
+      } else {
+        this.species.flavor_text_entries[0].flavor_text = ok.replace(
+          /\f/g,
+          ' '
+        );
+      }
 
-      this.species.flavor_text_entries[0].flavor_text = ok.replace(/\f/g, ' ');
+      this.genus = this.species.genera.length > 0 ? this.species.genera.find(
+        (c: any) => c.language.name === 'en'
+      ).genus : "" ;
+
+
+      this.flavorText =
+        this.species.flavor_text_entries.length > 0
+          ? this.species.flavor_text_entries.find(
+              (c: any) => c.language.name === 'en'
+            ).flavor_text
+          : '';
     });
   }
   navigateForwards(event: Event) {

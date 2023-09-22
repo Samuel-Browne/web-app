@@ -15,7 +15,7 @@
         {{ type.type.name | uppercase }}
       </p>
       <div>
-        {{ species.genera[7].genus }}
+        {{ genus }}
       </div>
       <div>
         Abilities:
@@ -30,7 +30,7 @@
         {{ "Weight: " + pokemon.weight + "kg" }}
       </div>
       <div class="mt-2">
-        {{ species.flavor_text_entries[0].flavor_text }}
+        {{ flavorText }}
       </div>
       <img
         src="{{ pokemon.sprites.other['official-artwork'].front_default }}"
