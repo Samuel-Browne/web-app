@@ -1,19 +1,28 @@
 <div *ngIf="pokemon && species" class="container mx-auto">
   <div class="row">
     <div class="col-6">
-      <h1>{{ pokemon.name | uppercase }} {{species.names[0].name}}</h1>
+      <h1>{{ pokemon.name | uppercase }} {{ species.names[0].name }}</h1>
       <h1>{{ "#" + pokemon.id }}</h1>
       <p *ngFor="let type of pokemon.types">
         {{ type.type.name | uppercase }}
       </p>
       <div>
-        {{species.genera[7].genus}}
+        {{ species.genera[7].genus }}
+      </div>
+      <div>
+        Abilities:
+        <ng-container *ngFor="let ability of pokemon.abilities">
+          {{ ability.ability.name | titlecase }}
+        </ng-container>
       </div>
       <div>
         {{ "Height: " + pokemon.height + "m" }}
       </div>
       <div>
         {{ "Weight: " + pokemon.weight + "kg" }}
+      </div>
+      <div class="mt-2">
+        {{ species.flavor_text_entries[0].flavor_text }}
       </div>
       <img
         src="{{ pokemon.sprites.other['official-artwork'].front_default }}"
@@ -29,13 +38,13 @@
     </div>
 
     <div class="col-2">
-        <div>Game Appearences</div>
-        <ul class="list-group-dark" >
-          <li class="list-group-item"*ngFor="let game of pokemon.game_indices">
-            {{ game.version.name | uppercase}}
-          </li>
-        </ul>
-        </div>
+      <div>Game Appearences</div>
+      <ul class="list-group-dark">
+        <li class="list-group-item" *ngFor="let game of pokemon.game_indices">
+          {{ game.version.name | uppercase }}
+        </li>
+      </ul>
+    </div>
   </div>
 
   <div class="row">
