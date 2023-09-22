@@ -27,64 +27,63 @@ export class HomeComponent {
 
   constructor(private pokemonService: PokemonService, private router: Router) {
 
-    for (let i = 0; i < 9; i++) {
+    for (let i = 1; i <= 151; i++) {
       this.subs.sink = this.pokemonService
-        .getPokemonData(1 + i)
+        .getPokemonData(i)
         .subscribe((data) => {
-//          this.firstGenSpriteUrls.push(data.sprites.front_default);
           this.firstGenPokemon.push(data);
           this.firstGenPokemon.sort();
         });
     }   
 
-    for (let i = 0; i < 9; i++) {
+    for (let i = 152; i <= 251; i++) {
       this.subs.sink = this.pokemonService
-        .getPokemonData(152 + i)
+        .getPokemonData(i)
         .subscribe((data) => {
           this.secondGenPokemon.push(data);
           this.secondGenPokemon.sort();
         });
     }
 
-    for (let i = 0; i < 9; i++) {
+    for (let i = 252; i <=386; i++) {
       this.subs.sink = this.pokemonService
-        .getPokemonData(252 + i)
+        .getPokemonData(i)
         .subscribe((data) => {
           this.thirdGenPokemon.push(data);
           this.thirdGenPokemon.sort();
         });
     }
 
-    for (let i = 0; i < 9; i++) {
+    for (let i = 387; i <= 494; i++) {
       this.subs.sink = this.pokemonService
-        .getPokemonData(387 + i)
+        .getPokemonData(i)
         .subscribe((data) => {
           this.fourthGenPokemon.push(data);
           this.fourthGenPokemon.sort();
         });
     }
 
-    for (let i = 0; i < 9; i++) {
+    for (let i = 495; i <= 649; i++) {
       this.subs.sink = this.pokemonService
-        .getPokemonData(495 + i)
+        .getPokemonData(i)
         .subscribe((data) => {
           this.fifthGenPokemon.push(data);
           this.fifthGenPokemon.sort();
         });
     }
 
-    for (let i = 0; i < 9; i++) {
+    for (let i = 650; i <= 721; i++) {
       this.subs.sink = this.pokemonService
-        .getPokemonData(650 + i)
+        .getPokemonData(i)
         .subscribe((data) => {
           this.sixthGenPokemon.push(data);
           this.sixthGenPokemon.sort();
         });
     }
 
-    for (let i = 0; i < 9; i++) {
+    for (let i = 722; i <= 1021; i++) {
       this.subs.sink = this.pokemonService
-        .getPokemonData(722 + i)
+        .getPokemonData(i)
         .subscribe((data) => {
           this.seventhGenPokemon.push(data);
           this.seventhGenPokemon.sort();
