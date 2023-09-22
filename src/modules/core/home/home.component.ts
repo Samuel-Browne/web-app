@@ -15,14 +15,15 @@ export class HomeComponent {
 
   pictureUrl: string = '';
 
-  firstGenSpriteUrls: string[] = [];
-  secondGenSpriteUrls: string[] = [];
+  
+  firstGenPokemon: any[] = [];
+  secondGenPokemon: any[]=[];
+  thirdGenPokemon: any[] = [];
+  fourthGenPokemon: any[] = [];
+  fifthGenPokemon: any[] = [];
+  sixthGenPokemon: any[] = [];
+  seventhGenPokemon: any[] = [];
 
-  thirdGenSpriteUrls: string[] = [];
-  fourthGenSpriteUrls: string[] = [];
-  fifthGenSpriteUrls: string[] = [];
-  sixthGenSpriteUrls: string[] = [];
-  seventhGenSpriteUrls: string[] = [];
 
   constructor(private pokemonService: PokemonService, private router: Router) {
 
@@ -30,8 +31,9 @@ export class HomeComponent {
       this.subs.sink = this.pokemonService
         .getPokemonData(1 + i)
         .subscribe((data) => {
-          this.firstGenSpriteUrls.push(data.sprites.front_default);
-          this.firstGenSpriteUrls.sort();
+//          this.firstGenSpriteUrls.push(data.sprites.front_default);
+          this.firstGenPokemon.push(data);
+          this.firstGenPokemon.sort();
         });
     }   
 
@@ -39,8 +41,8 @@ export class HomeComponent {
       this.subs.sink = this.pokemonService
         .getPokemonData(152 + i)
         .subscribe((data) => {
-          this.secondGenSpriteUrls.push(data.sprites.front_default);
-          this.secondGenSpriteUrls.sort();
+          this.secondGenPokemon.push(data);
+          this.secondGenPokemon.sort();
         });
     }
 
@@ -48,8 +50,8 @@ export class HomeComponent {
       this.subs.sink = this.pokemonService
         .getPokemonData(252 + i)
         .subscribe((data) => {
-          this.thirdGenSpriteUrls.push(data.sprites.front_default);
-          this.thirdGenSpriteUrls.sort();
+          this.thirdGenPokemon.push(data);
+          this.thirdGenPokemon.sort();
         });
     }
 
@@ -57,8 +59,8 @@ export class HomeComponent {
       this.subs.sink = this.pokemonService
         .getPokemonData(387 + i)
         .subscribe((data) => {
-          this.fourthGenSpriteUrls.push(data.sprites.front_default);
-          this.fourthGenSpriteUrls.sort();
+          this.fourthGenPokemon.push(data);
+          this.fourthGenPokemon.sort();
         });
     }
 
@@ -66,8 +68,8 @@ export class HomeComponent {
       this.subs.sink = this.pokemonService
         .getPokemonData(495 + i)
         .subscribe((data) => {
-          this.fifthGenSpriteUrls.push(data.sprites.front_default);
-          this.fifthGenSpriteUrls.sort();
+          this.fifthGenPokemon.push(data);
+          this.fifthGenPokemon.sort();
         });
     }
 
@@ -75,8 +77,8 @@ export class HomeComponent {
       this.subs.sink = this.pokemonService
         .getPokemonData(650 + i)
         .subscribe((data) => {
-          this.sixthGenSpriteUrls.push(data.sprites.front_default);
-          this.sixthGenSpriteUrls.sort();
+          this.sixthGenPokemon.push(data);
+          this.sixthGenPokemon.sort();
         });
     }
 
@@ -84,14 +86,10 @@ export class HomeComponent {
       this.subs.sink = this.pokemonService
         .getPokemonData(722 + i)
         .subscribe((data) => {
-          this.seventhGenSpriteUrls.push(data.sprites.front_default);
-          this.seventhGenSpriteUrls.sort();
+          this.seventhGenPokemon.push(data);
+          this.seventhGenPokemon.sort();
         });
     }
-  }
-
-  onClick(sprite: string) {
-    this.router.navigate(['/' + sprite]);
   }
 
   ngOnDestroy() {

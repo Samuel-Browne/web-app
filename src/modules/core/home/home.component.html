@@ -6,9 +6,8 @@
     </div>
   </div>
   <div class="row mt-1 bg-dark rounded">    
-    <div class="col" *ngFor="let sprite of firstGenSpriteUrls; index as i">
-      <a href="{{'/' + (i + 1)}}"><img src="{{ sprite }}"/></a>
-      
+    <div class="col" *ngFor="let pokemon of firstGenPokemon; ">
+      <a href="{{'/' + (pokemon.id)}}"><img src="{{ pokemon.sprites.front_default }}"/></a>      
     </div>
   </div>
 
@@ -19,8 +18,8 @@
   </div>
 
   <div class="row mt-1 bg-dark rounded">    
-    <div class="col" *ngFor="let sprite of secondGenSpriteUrls">
-      <img src="{{ sprite }}" (click)="onClick(sprite)" />
+    <div class="col" *ngFor="let pokemon of secondGenPokemon; ">
+      <a href="{{'/' + (pokemon.id)}}"><img src="{{ pokemon.sprites.front_default }}"/></a>      
     </div>
   </div>
 
@@ -30,8 +29,8 @@
     </div>
   </div>
   <div class="row mt-1 bg-dark rounded">    
-    <div class="col" *ngFor="let sprite of thirdGenSpriteUrls">
-      <img src="{{ sprite }}" (click)="onClick(sprite)" />
+    <div class="col" *ngFor="let pokemon of thirdGenPokemon; ">
+      <a href="{{'/' + (pokemon.id)}}"><img src="{{ pokemon.sprites.front_default }}"/></a>      
     </div>
   </div>
 
@@ -41,8 +40,8 @@
     </div>
   </div>
   <div class="row mt-1 bg-dark rounded">    
-    <div class="col" *ngFor="let sprite of fourthGenSpriteUrls">
-      <img src="{{ sprite }}" (click)="onClick(sprite)" />
+    <div class="col" *ngFor="let pokemon of fourthGenPokemon; ">
+      <a href="{{'/' + (pokemon.id)}}"><img src="{{ pokemon.sprites.front_default }}"/></a>      
     </div>
   </div>
 
@@ -52,8 +51,8 @@
     </div>
   </div>
   <div class="row mt-1 bg-dark rounded">    
-    <div class="col" *ngFor="let sprite of fifthGenSpriteUrls">
-      <img src="{{ sprite }}" (click)="onClick(sprite)" />
+    <div class="col" *ngFor="let pokemon of fifthGenPokemon; ">
+      <a href="{{'/' + (pokemon.id)}}"><img src="{{ pokemon.sprites.front_default }}"/></a>      
     </div>
   </div>
 
@@ -63,8 +62,8 @@
     </div>
   </div>
   <div class="row mt-1 bg-dark rounded">    
-    <div class="col" *ngFor="let sprite of sixthGenSpriteUrls">
-      <img src="{{ sprite }}" (click)="onClick(sprite)" />
+    <div class="col" *ngFor="let pokemon of sixthGenPokemon; ">
+      <a href="{{'/' + (pokemon.id)}}"><img src="{{ pokemon.sprites.front_default }}"/></a>      
     </div>
   </div>
 
@@ -74,8 +73,8 @@
     </div>
   </div>
   <div class="row mt-1 bg-dark rounded">    
-    <div class="col" *ngFor="let sprite of seventhGenSpriteUrls">
-      <img src="{{ sprite }}" (click)="onClick(sprite)" />
+    <div class="col" *ngFor="let pokemon of seventhGenPokemon; ">
+      <a href="{{'/' + (pokemon.id)}}"><img src="{{ pokemon.sprites.front_default }}"/></a>      
     </div>
   </div>
 
