@@ -25,9 +25,8 @@ export class AboutComponent {
       console.log(this.species);
       let ok: string = this.species.flavor_text_entries[0].flavor_text;
 
-      this.species.flavor_text_entries[0].flavor_text = ok.replace(/\f/g, '');
-  
-      
+      this.species.flavor_text_entries[0].flavor_text = ok.replace(/\f/g, ' ');
+        
     });
 
 
