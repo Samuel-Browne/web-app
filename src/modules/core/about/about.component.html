@@ -14,11 +14,13 @@
   </div>
 
   <div class="row">
+    <div class="col-4">
     <div>Game Appearences</div>
-    <div class="col" *ngFor="let game of pokemon.game_indices">
-      <div>
-        {{ game.version.name }}
-      </div>
+    <ul class="list-group-dark" >
+      <li class="list-group-item"*ngFor="let game of pokemon.game_indices">
+        {{ game.version.name | uppercase}}
+      </li>
+    </ul>
     </div>
   </div>
 
