@@ -1,8 +1,11 @@
 <div *ngIf="pokemon && species" class="container mx-auto">
     <div class="row">
+        <div class="col-4">
+            <button (click)="navigateBackwards($event)" type="button">Previous</button>
+            
+        </div>
         <div>
-            <button (click)="navigateBackwards()">Previous</button>
-            <button (click)="navigateForwards()">Forward</button>
+            <button (click)="navigateForwards($event)" type="button">Forward</button>
         </div>
 
     </div>
