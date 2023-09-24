@@ -46,7 +46,9 @@ export class HomeComponent {
         .getPokemonData(i)
         .subscribe((data) => {
           this.secondGenPokemon.push(data);
-          this.secondGenPokemon.sort();
+          this.secondGenPokemon = this.secondGenPokemon.sort((a,b) =>{
+            return a.id - b.id
+          });
         });
     }
 
@@ -55,7 +57,9 @@ export class HomeComponent {
         .getPokemonData(i)
         .subscribe((data) => {
           this.thirdGenPokemon.push(data);
-          this.thirdGenPokemon.sort();
+          this.thirdGenPokemon = this.thirdGenPokemon.sort((a,b) =>{
+            return a.id - b.id
+          });
         });
     }
 
@@ -64,7 +68,9 @@ export class HomeComponent {
         .getPokemonData(i)
         .subscribe((data) => {
           this.fourthGenPokemon.push(data);
-          this.fourthGenPokemon.sort();
+          this.fourthGenPokemon = this.fourthGenPokemon.sort((a,b) =>{
+            return a.id - b.id
+          });
         });
     }
 
@@ -73,7 +79,9 @@ export class HomeComponent {
         .getPokemonData(i)
         .subscribe((data) => {
           this.fifthGenPokemon.push(data);
-          this.fifthGenPokemon.sort();
+          this.fifthGenPokemon = this.fifthGenPokemon.sort((a,b) =>{
+            return a.id - b.id
+          });
         });
     }
 
@@ -82,7 +90,9 @@ export class HomeComponent {
         .getPokemonData(i)
         .subscribe((data) => {
           this.sixthGenPokemon.push(data);
-          this.sixthGenPokemon.sort();
+          this.sixthGenPokemon = this.sixthGenPokemon.sort((a,b) =>{
+            return a.id - b.id
+          });
         });
     }
 
@@ -91,7 +101,9 @@ export class HomeComponent {
         .getPokemonData(i)
         .subscribe((data) => {
           this.seventhGenPokemon.push(data);
-          this.seventhGenPokemon.sort();
+          this.seventhGenPokemon = this.seventhGenPokemon.sort((a,b) =>{
+            return a.id - b.id
+          });
         });
     }
   }
