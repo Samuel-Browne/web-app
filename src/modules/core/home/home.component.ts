@@ -30,12 +30,13 @@ export class HomeComponent {
     for (let i = 1; i <= 151; i++) {
       this.subs.sink = this.pokemonService
         .getPokemonData(i)
-        .pipe(finalize(()=>{
-          this.firstGenPokemon.sort();
+        .pipe(finalize(()=>{          
         }))
         .subscribe((data) => {
           this.firstGenPokemon.push(data);
-          this.firstGenPokemon.sort();
+          this.firstGenPokemon.sort((a,b) =>{
+            return a.id - b.id
+          });
         });
         
     }   
