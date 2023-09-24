@@ -34,7 +34,7 @@ export class HomeComponent {
         }))
         .subscribe((data) => {
           this.firstGenPokemon.push(data);
-          this.firstGenPokemon.sort((a,b) =>{
+          this.firstGenPokemon = this.firstGenPokemon.sort((a,b) =>{
             return a.id - b.id
           });
         });
