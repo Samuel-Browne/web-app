@@ -84,5 +84,27 @@
     </div>
   </div>
 
+  <div class="row mt-5">
+    <div class="col=3">      
+      <p>Generation 8</p>
+    </div>
+  </div>
+  <div class="row mt-1 bg-dark rounded">    
+    <div class="col" *ngFor="let pokemon of eigthGenPokemon; ">
+      <a href="{{'/' + (pokemon.id)}}" title="{{(pokemon.name | titlecase) + ' (Pokémon)'}}"><img src="{{ pokemon.sprites.front_default }}"/></a>      
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col=3">      
+      <p>Generation 9</p>
+    </div>
+  </div>
+  <div class="row mt-1 bg-dark rounded">    
+    <div class="col" *ngFor="let pokemon of ninthGenPokemon; ">
+      <a href="{{'/' + (pokemon.id)}}" title="{{(pokemon.name | titlecase) + ' (Pokémon)'}}"><img src="{{ pokemon.sprites.front_default }}"/></a>      
+    </div>
+  </div>
+
 
 </div>

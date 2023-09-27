@@ -23,6 +23,8 @@ export class HomeComponent {
   fifthGenPokemon: any[] = [];
   sixthGenPokemon: any[] = [];
   seventhGenPokemon: any[] = [];
+  eigthGenPokemon: any[] = [];
+  ninthGenPokemon: any[] = [];
 
 
   constructor(private pokemonService: PokemonService, private router: Router) {
@@ -96,7 +98,7 @@ export class HomeComponent {
         });
     }
 
-    for (let i = 722; i <= 1017; i++) {
+    for (let i = 722; i <= 809; i++) {
       this.subs.sink = this.pokemonService
         .getPokemonData(i)
         .subscribe((data) => {
@@ -106,7 +108,29 @@ export class HomeComponent {
           });
         });
     }
+    for (let i = 810; i <= 905; i++) {
+      this.subs.sink = this.pokemonService
+        .getPokemonData(i)
+        .subscribe((data) => {
+          this.eigthGenPokemon.push(data);
+          this.eigthGenPokemon = this.eigthGenPokemon.sort((a,b) =>{
+            return a.id - b.id
+          });
+        });
+    }
+
+    for (let i = 906; i <= 1017; i++) {
+      this.subs.sink = this.pokemonService
+        .getPokemonData(i)
+        .subscribe((data) => {
+          this.ninthGenPokemon.push(data);
+          this.ninthGenPokemon = this.ninthGenPokemon.sort((a,b) =>{
+            return a.id - b.id
+          });
+        });
+    }
   }
+
 
   ngOnDestroy() {
     this.subs.unsubscribe();
