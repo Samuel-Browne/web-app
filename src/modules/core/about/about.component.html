@@ -1,6 +1,6 @@
 <div *ngIf="pokemon && species" class="container mx-auto">
   <div class="row">
-    <div class="col-4">
+    <div class="col-sm-4">
       <button (click)="navigateBackwards($event)" type="button">
         Previous
       </button>
@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-6">
+    <div class="col-sm-6">
       <h1>{{ pokemon.name | uppercase }} {{ species.names[0].name }}</h1>
       <h1>{{ "#" + pokemon.id }}</h1>
       <p *ngFor="let type of pokemon.types">
@@ -24,7 +24,7 @@
         </ng-container>
       </div>
       <div>
-        {{ "Height: " + pokemon.height + "m" }}
+        {{ "Heightt: " + pokemon.heightt + "m" }}
       </div>
       <div>
         {{ "Weight: " + pokemon.weight + "kg" }}
@@ -36,7 +36,7 @@
         src="{{ pokemon.sprites.other['official-artwork'].front_default }}"
       />
     </div>
-    <div class="col-4">
+    <div class="col-sm-4">
       <div>Base Stats</div>
       <table class="table table-dark">
         <thead>
@@ -71,19 +71,9 @@
       </table>
     </div>
 
-    <!-- <div class="col-2">
-      <div>Game Appearences</div>
-      <ul class="list-group-dark">
-        <li class="list-group-item" *ngFor="let game of pokemon.game_indices">
-          {{ game.version.name | uppercase }}
-        </li>
-      </ul>
-    </div>
-  </div> -->
-
     <div class="row">
       <div
-        class="col-2"
+        class="col-sm-3"
         *ngIf="
           pokemon.sprites.versions['generation-i']['red-blue'].front_default
         "
@@ -94,12 +84,12 @@
             pokemon.sprites.versions['generation-i']['red-blue'].front_default
           }}"
           width="100"
-          heigh="100"
+          height="100"
         />
       </div>
 
       <div
-        class="col-2"
+        class="col-sm-3"
         *ngIf="pokemon.sprites.versions['generation-i'].yellow.front_default"
       >
         <p>Pokémon Yellow</p>
@@ -108,12 +98,12 @@
             pokemon.sprites.versions['generation-i'].yellow.front_default
           }}"
           width="100"
-          heigh="100"
+          height="100"
         />
       </div>
 
       <div
-        class="col-2"
+        class="col-sm-3"
         *ngIf="pokemon.sprites.versions['generation-ii'].crystal.front_default"
       >
         <p>Pokémon Crystal</p>
@@ -122,12 +112,12 @@
             pokemon.sprites.versions['generation-ii'].crystal.front_default
           }}"
           width="100"
-          heigh="100"
+          height="100"
         />
       </div>
 
       <div
-        class="col-2"
+        class="col-sm-3"
         *ngif="pokemon.sprites.versions['generation-ii'].gold.front_default"
       >
         <p>Pokémon Gold</p>
@@ -136,40 +126,43 @@
             pokemon.sprites.versions['generation-ii'].gold.front_default
           }}"
           width="100"
-          heigh="100"
+          height="100"
         />
       </div>
 
-      <div
-        class="col-2"
-        *ngIf="pokemon.sprites.versions['generation-ii'].silver.front_default"
-      >
-        <p>Pokémon Silver</p>
-        <img
-          src="{{
-            pokemon.sprites.versions['generation-ii'].silver.front_default
-          }}"
-          width="100"
-          heigh="100"
-        />
-      </div>
+      <div class="row">
+        <div
+          class="col-sm-3"
+          *ngIf="pokemon.sprites.versions['generation-ii'].silver.front_default"
+        >
+          <p>Pokémon Silver</p>
+          <img
+            src="{{
+              pokemon.sprites.versions['generation-ii'].silver.front_default
+            }}"
+            width="100"
+            height="100"
+          />
+        </div>
 
-      <div
-        class="col-2"
-        *ngIf="pokemon.sprites.versions['generation-iii'].emerald.front_default"
-      >
-        <p>Pokémon Emerald</p>
-        <img
-          src="{{
+        <div
+          class="col-sm-3"
+          *ngIf="
             pokemon.sprites.versions['generation-iii'].emerald.front_default
-          }}"
-          width="100"
-          heigh="100"
-        />
+          "
+        >
+          <p>Pokémon Emerald</p>
+          <img
+            src="{{
+              pokemon.sprites.versions['generation-iii'].emerald.front_default
+            }}"
+            width="100"
+            height="100"
+          />
+        </div>
       </div>
-
       <div
-        class="col-2"
+        class="col-sm-3"
         *ngIf="
           pokemon.sprites.versions['generation-iv']['diamond-pearl']
             .front_default
@@ -182,67 +175,65 @@
               .front_default
           }}"
           width="100"
-          heigh="100"
+          height="100"
         />
       </div>
 
-      <div class="col-2">
-        <p>Pokémon Black White</p>
+      <div class="col-sm-3">
+        <div>
+          <p>Pokémon Black White</p>
+        </div>
         <img
           src="{{
             pokemon.sprites.versions['generation-v']['black-white']
               .front_default
           }}"
           width="100"
-          heigh="100"
+          height="100"
         />
       </div>
-
-      <div class="col-2">
-        <p>Pokémon OmegaRuby AlphaSaphhire</p>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div>
+          <p>Pokémon OmegaRuby AlphaSaphhire</p>
+        </div>
         <img
           src="{{
             pokemon.sprites.versions['generation-vi']['omegaruby-alphasapphire']
               .front_default
           }}"
           width="100"
-          heigh="100"
+          height="100"
         />
       </div>
 
-      <div class="col-2">
-        <p>Pokémon X Y</p>
+      <div class="col-sm-3">
+        <div>
+          <p>Pokémon X Y</p>
+        </div>
         <img
           src="{{
             pokemon.sprites.versions['generation-vi']['x-y'].front_default
           }}"
           width="100"
-          heigh="100"
+          height="100"
         />
       </div>
 
-      <div class="col-2">
-        <p>Pokémon Ultra Sun Ultra Moon</p>
+      <div class="col-sm-3">
+        <div>
+          <p>Pokémon Ultra Sun Ultra Moon</p>
+        </div>
         <img
           src="{{
             pokemon.sprites.versions['generation-vii']['ultra-sun-ultra-moon']
               .front_default
           }}"
           width="100"
-          heigh="100"
+          height="100"
         />
       </div>
-
-      <!-- <div class="col-2">
-        <p>Pokémon 8</p>
-        <img
-          src="{{
-            pokemon.sprites.versions['generation-viii'].icons.front_default
-          }}"
-          width="100"
-          heigh="100"
-        />
-      </div> -->
     </div>
   </div>
 </div>
