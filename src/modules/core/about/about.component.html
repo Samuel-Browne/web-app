@@ -29,15 +29,18 @@
         </p> -->
         <img
           *ngFor="let type of pokemon.types"
-          src="/assets/{{ type.type.name | lowercase }}.gif"
+          src="/assets/{{ type.type.name | lowercase }}.png"
         />
         <div>
-          {{ genus }}
+          <h1>{{ genus }}</h1>
         </div>
         <div>
           Abilities:
-          <ng-container *ngFor="let ability of pokemon.abilities">
-            {{ ability.ability.name | titlecase }}
+          <ng-container
+            *ngFor="let ability of pokemon.abilities; let last = last"
+          >
+            {{ ability.ability.name | titlecase
+            }}<ng-container *ngIf="!last">,</ng-container>
           </ng-container>
         </div>
         <div>
@@ -243,8 +246,6 @@
             pokemon.sprites.versions['generation-vi']['omegaruby-alphasapphire']
               .front_default
           }}"
-          width="100"
-          height="100"
         />
       </div>
 
@@ -277,8 +278,6 @@
             pokemon.sprites.versions['generation-vii']['ultra-sun-ultra-moon']
               .front_default
           }}"
-          width="100"
-          height="100"
         />
       </div>
     </div>
