@@ -24,9 +24,13 @@
       <div class="col-sm-6">
         <h1>{{ pokemon.name | uppercase }} {{ species.names[0].name }}</h1>
         <h1>{{ "#" + pokemon.id }}</h1>
-        <p *ngFor="let type of pokemon.types">
+        <!-- <p *ngFor="let type of pokemon.types" ngClass="">
           {{ type.type.name | uppercase }}
-        </p>
+        </p> -->
+        <img
+          *ngFor="let type of pokemon.types"
+          src="/assets/{{ type.type.name | lowercase }}.gif"
+        />
         <div>
           {{ genus }}
         </div>
@@ -37,10 +41,10 @@
           </ng-container>
         </div>
         <div>
-          {{ "Height: " + pokemon.height + "m" }}
+          {{ "Height: " + pokemon.height / 10 + "m" }}
         </div>
         <div>
-          {{ "Weight: " + pokemon.weight + "kg" }}
+          {{ "Weight: " + pokemon.weight / 10 + "kg" }}
         </div>
         <div class="mt-2">
           {{ flavorText }}
