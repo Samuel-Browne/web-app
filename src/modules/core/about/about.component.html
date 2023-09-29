@@ -1,13 +1,20 @@
 <div *ngIf="pokemon && species" class="container mx-auto">
-
   <div class="row">
     <div class="col-sm-4">
       <button (click)="navigateBackwards($event)" type="button">
         Previous
       </button>
-      <img src="{{previousPokemon.sprites.front_default}}" class="img-fluid" title="{{(previousPokemon.name | titlecase) + ' (Pokémon)'}}">
+      <img
+        src="{{ previousPokemon.sprites.front_default }}"
+        class="img-fluid"
+        title="{{ (previousPokemon.name | titlecase) + ' (Pokémon)' }}"
+      />
       <button (click)="navigateForwards($event)" type="button">Forward</button>
-      <img src="{{nextPokemon.sprites.front_default}}" class="img-fluid" title="{{(nextPokemon.name | titlecase) + ' (Pokémon)'}}">
+      <img
+        src="{{ nextPokemon.sprites.front_default }}"
+        class="img-fluid"
+        title="{{ (nextPokemon.name | titlecase) + ' (Pokémon)' }}"
+      />
     </div>
   </div>
 
@@ -80,189 +87,189 @@
         </tbody>
       </table>
     </div>
+    <div class="col-sm-3">
+      <img src="{{pokemon.sprites.front_shiny}}">
+      <img src="{{pokemon.sprites.front_default}}">
+      <img src="{{pokemon.sprites.back_shiny}}">
+      <img src="{{pokemon.sprites.back_default}}">
+    </div>
+  </div>
 
-    <div class="row">
-      <div
-        class="col-sm-3"
-        *ngIf="
+  <div class="row">
+    <div
+      class="col-sm-3"
+      *ngIf="pokemon.sprites.versions['generation-i']['red-blue'].front_default"
+    >
+      <p>Pokémon Red</p>
+      <img
+        src="{{
           pokemon.sprites.versions['generation-i']['red-blue'].front_default
-        "
-      >
-        <p>Pokémon Red</p>
-        <img
-          src="{{
-            pokemon.sprites.versions['generation-i']['red-blue'].front_default
-          }}"
-          width="100"
-          height="100"
-        />
-      </div>
-
-      <div
-        class="col-sm-3"
-        *ngIf="pokemon.sprites.versions['generation-i'].yellow.front_default"
-      >
-        <p>Pokémon Yellow</p>
-        <img
-          src="{{
-            pokemon.sprites.versions['generation-i'].yellow.front_default
-          }}"
-          width="100"
-          height="100"
-        />
-      </div>
-
-      <div
-        class="col-sm-3"
-        *ngIf="pokemon.sprites.versions['generation-ii'].crystal.front_default"
-      >
-        <p>Pokémon Crystal</p>
-        <img
-          src="{{
-            pokemon.sprites.versions['generation-ii'].crystal.front_default
-          }}"
-          width="100"
-          height="100"
-        />
-      </div>
-
-      <div
-        class="col-sm-3"
-        *ngif="pokemon.sprites.versions['generation-ii'].gold.front_default"
-      >
-        <p>Pokémon Gold</p>
-        <img
-          src="{{
-            pokemon.sprites.versions['generation-ii'].gold.front_default
-          }}"
-          width="100"
-          height="100"
-        />
-      </div>
+        }}"
+        width="100"
+        height="100"
+      />
     </div>
 
-    <div class="row">
-      <div
-        class="col-sm-3"
-        *ngIf="pokemon.sprites.versions['generation-ii'].silver.front_default"
-      >
-        <p>Pokémon Silver</p>
-        <img
-          src="{{
-            pokemon.sprites.versions['generation-ii'].silver.front_default
-          }}"
-          width="100"
-          height="100"
-        />
-      </div>
+    <div
+      class="col-sm-3"
+      *ngIf="pokemon.sprites.versions['generation-i'].yellow.front_default"
+    >
+      <p>Pokémon Yellow</p>
+      <img
+        src="{{
+          pokemon.sprites.versions['generation-i'].yellow.front_default
+        }}"
+        width="100"
+        height="100"
+      />
+    </div>
 
-      <div
-        class="col-sm-3"
-        *ngIf="pokemon.sprites.versions['generation-iii'].emerald.front_default"
-      >
-        <p>Pokémon Emerald</p>
-        <img
-          src="{{
-            pokemon.sprites.versions['generation-iii'].emerald.front_default
-          }}"
-          width="100"
-          height="100"
-        />
-      </div>
+    <div
+      class="col-sm-3"
+      *ngIf="pokemon.sprites.versions['generation-ii'].crystal.front_default"
+    >
+      <p>Pokémon Crystal</p>
+      <img
+        src="{{
+          pokemon.sprites.versions['generation-ii'].crystal.front_default
+        }}"
+        width="100"
+        height="100"
+      />
+    </div>
 
-      <div
-        class="col-sm-3"
-        *ngIf="
+    <div
+      class="col-sm-3"
+      *ngIf="pokemon.sprites.versions['generation-ii'].gold.front_default"
+    >
+      <p>Pokémon Gold</p>
+      <img
+        src="{{ pokemon.sprites.versions['generation-ii'].gold.front_default }}"
+        width="100"
+        height="100"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div
+      class="col-sm-3"
+      *ngIf="pokemon.sprites.versions['generation-ii'].silver.front_default"
+    >
+      <p>Pokémon Silver</p>
+      <img
+        src="{{
+          pokemon.sprites.versions['generation-ii'].silver.front_default
+        }}"
+        width="100"
+        height="100"
+      />
+    </div>
+
+    <div
+      class="col-sm-3"
+      *ngIf="pokemon.sprites.versions['generation-iii'].emerald.front_default"
+    >
+      <p>Pokémon Emerald</p>
+      <img
+        src="{{
+          pokemon.sprites.versions['generation-iii'].emerald.front_default
+        }}"
+        width="100"
+        height="100"
+      />
+    </div>
+
+    <div
+      class="col-sm-3"
+      *ngIf="
+        pokemon.sprites.versions['generation-iv']['diamond-pearl'].front_default
+      "
+    >
+      <p>Pokémon Diamond Pearl</p>
+      <img
+        src="{{
           pokemon.sprites.versions['generation-iv']['diamond-pearl']
             .front_default
-        "
-      >
-        <p>Pokémon Diamond Pearl</p>
-        <img
-          src="{{
-            pokemon.sprites.versions['generation-iv']['diamond-pearl']
-              .front_default
-          }}"
-          width="100"
-          height="100"
-        />
-      </div>
-
-      <div
-        class="col-sm-3"
-        *ngIf="
-          pokemon.sprites.versions['generation-v']['black-white'].front_default
-        "
-      >
-        <div>
-          <p>Pokémon Black White</p>
-        </div>
-        <img
-          src="{{
-            pokemon.sprites.versions['generation-v']['black-white']
-              .front_default
-          }}"
-          width="100"
-          height="100"
-        />
-      </div>
+        }}"
+        width="100"
+        height="100"
+      />
     </div>
-    <div class="row">
-      <div
-        class="col-sm-3"
-        *ngIf="
+
+    <div
+      class="col-sm-3"
+      *ngIf="
+        pokemon.sprites.versions['generation-v']['black-white'].front_default
+      "
+    >
+      <div>
+        <p>Pokémon Black White</p>
+      </div>
+      <img
+        src="{{
+          pokemon.sprites.versions['generation-v']['black-white'].front_default
+        }}"
+        width="100"
+        height="100"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div
+      class="col-sm-3"
+      *ngIf="
+        pokemon.sprites.versions['generation-vi']['omegaruby-alphasapphire']
+          .front_default
+      "
+    >
+      <div>
+        <p>Pokémon OmegaRuby AlphaSaphhire</p>
+      </div>
+      <img
+        src="{{
           pokemon.sprites.versions['generation-vi']['omegaruby-alphasapphire']
             .front_default
-        "
-      >
-        <div>
-          <p>Pokémon OmegaRuby AlphaSaphhire</p>
-        </div>
-        <img
-          src="{{
-            pokemon.sprites.versions['generation-vi']['omegaruby-alphasapphire']
-              .front_default
-          }}"
-          width="100"
-          height="100"
-        />
-      </div>
+        }}"
+        width="100"
+        height="100"
+      />
+    </div>
 
-      <div
-        class="col-sm-3"
-        *ngIf="pokemon.sprites.versions['generation-vi']['x-y'].front_default"
-      >
-        <div>
-          <p>Pokémon X Y</p>
-        </div>
-        <img
-          src="{{
-            pokemon.sprites.versions['generation-vi']['x-y'].front_default
-          }}"
-          width="59"
-          height="59"
-        />
+    <div
+      class="col-sm-3"
+      *ngIf="pokemon.sprites.versions['generation-vi']['x-y'].front_default"
+    >
+      <div>
+        <p>Pokémon X Y</p>
       </div>
+      <img
+        src="{{
+          pokemon.sprites.versions['generation-vi']['x-y'].front_default
+        }}"
+        width="59"
+        height="59"
+      />
+    </div>
 
-      <div
-        class="col-sm-3"
-        *ngIf="
+    <div
+      class="col-sm-3"
+      *ngIf="
+        pokemon.sprites.versions['generation-vii']['ultra-sun-ultra-moon']
+          .front_default
+      "
+    >
+      <div>
+        <p>Pokémon Ultra Sun Ultra Moon</p>
+      </div>
+      <img
+        src="{{
           pokemon.sprites.versions['generation-vii']['ultra-sun-ultra-moon']
             .front_default
-        "
-      >
-        <div>
-          <p>Pokémon Ultra Sun Ultra Moon</p>
-        </div>
-        <img
-          src="{{
-            pokemon.sprites.versions['generation-vii']['ultra-sun-ultra-moon']
-              .front_default
-          }}"
-          width="100"
-          height="100"
-        />
-      </div>
+        }}"
+        width="100"
+        height="100"
+      />
     </div>
   </div>
 </div>
