@@ -28,11 +28,15 @@
       <div class="col-sm-6">
         <h1>{{ pokemon.name | uppercase }} {{ species.names[0].name }}</h1>
         <h1>{{ "#" + pokemon.id }}</h1>
-        <p>
-          <ng-container *ngFor="let type of pokemon.types" ngClass="">
-            {{ type.type.name | uppercase }}
-          </ng-container>
-        </p>
+
+        <div
+          *ngFor="let type of pokemon.types"
+          class="lol p-1"
+          [ngClass]="getClassForType(type.type.name)"
+        >
+          {{ type.type.name | uppercase }}
+        </div>
+
         <!-- <img
           *ngFor="let type of pokemon.types"
           src="/assets/{{ type.type.name | lowercase }}.png"

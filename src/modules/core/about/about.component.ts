@@ -89,4 +89,71 @@ export class AboutComponent {
     this.router.navigate(['' + this.id]);
   }
   ngOnInit() {}
+
+  getClassForType(type: string) {
+    if (type === 'grass') {
+      return 'grass-type';
+    }
+    if (type === 'water') {
+      return 'water-type';
+    }
+    if (type === 'poison') {
+      return 'poison-type';
+    }
+    if (type === 'fire') {
+      return 'fire-type';
+    }
+    if (type === 'ghost') {
+      return 'ghost-type';
+    }
+    if (type === 'rock') {
+      return 'rock-type';
+    }
+    if (type === 'ground') {
+      return 'ground-type';
+    }
+    if (type === 'fighting') {
+      return 'fighting-type';
+    }
+    if (type === 'bug') {
+      return 'bug-type';
+    }
+    if (type === 'normal') {
+      return 'normal-type';
+    }
+    if (type === 'flying') {
+      return 'flying-type';
+    }
+    if (type === 'ice') {
+      return 'ice-type';
+    }
+    if (type === 'dragon') {
+      return 'dragon-type';
+    }
+    if (type === 'fairy') {
+      return 'fairy-type';
+    }
+    if (type === 'electric') {
+      return 'electric-type';
+    }
+    if (type === 'flying') {
+      return 'flying-type';
+    }
+
+    if (type === 'psychic') {
+      return 'psychic-type';
+    }
+
+    if (type === 'rock') {
+      return 'rock-type';
+    }
+    if (type === 'steel') {
+      return 'steel-type';
+    }
+    if (type === 'dark') {
+      return 'dark-type';
+    }
+
+    return 'grass-type';
+  }
 }
