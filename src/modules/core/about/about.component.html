@@ -1,28 +1,23 @@
 <div *ngIf="pokemon && species" class="container mx-auto">
   <div class="row">
-    <div class="col-sm-2">
-      <div class="col-sm-2">
-        <button (click)="navigateBackwards($event)" type="button">
-          Previous
-        </button>
+    <div class="col-sm">
+      <button (click)="navigateBackwards($event)" type="button">
+        Previous
+      </button>
 
-        <img
-          src="{{ previousPokemon.sprites.front_default }}"
-          class="img-fluid"
-          title="{{ (previousPokemon.name | titlecase) + ' (Pokémon)' }}"
-        />
-      </div>
-      <div class="col-sm-2">
-        <button (click)="navigateForwards($event)" type="button">
-          Forward
-        </button>
+      <img
+        src="{{ previousPokemon.sprites.front_default }}"
+        class="img-fluid"
+        title="{{ (previousPokemon.name | titlecase) + ' (Pokémon)' }}"
+      />
 
-        <img
-          src="{{ nextPokemon.sprites.front_default }}"
-          class="img-fluid"
-          title="{{ (nextPokemon.name | titlecase) + ' (Pokémon)' }}"
-        />
-      </div>
+      <button (click)="navigateForwards($event)" type="button">Forward</button>
+
+      <img
+        src="{{ nextPokemon.sprites.front_default }}"
+        class="img-fluid"
+        title="{{ (nextPokemon.name | titlecase) + ' (Pokémon)' }}"
+      />
     </div>
 
     <div class="row">
