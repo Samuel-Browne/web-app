@@ -32,19 +32,19 @@ export class AboutComponent {
       console.log(this.pokemon);
     });
 
-    if(this.id !== 1){
-    this.pokemonService.getPokemonData(this.id - 1).subscribe((data) => {
-      this.previousPokemon = data;
-      console.log(this.pokemon);
-    });
-  }
+    if (this.id !== 1) {
+      this.pokemonService.getPokemonData(this.id - 1).subscribe((data) => {
+        this.previousPokemon = data;
+        console.log(this.pokemon);
+      });
+    }
 
-  if(this.id !== 1017){
-    this.pokemonService.getPokemonData(this.id + 1).subscribe((data) => {
-      this.nextPokemon = data;
-      console.log(this.pokemon);
-    });
-  }
+    if (this.id !== 1017) {
+      this.pokemonService.getPokemonData(this.id + 1).subscribe((data) => {
+        this.nextPokemon = data;
+        console.log(this.pokemon);
+      });
+    }
 
     this.pokemonService.getPokemonSpeciesData(this.id).subscribe((data) => {
       this.species = data;
@@ -53,18 +53,17 @@ export class AboutComponent {
         this.species.flavor_text_entries.length > 0
           ? this.species.flavor_text_entries[0].flavor_text
           : '';
-      if (!ok) {
-      } else {
+      if (ok) {
         this.species.flavor_text_entries[0].flavor_text = ok.replace(
           /\f/g,
           ' '
         );
       }
 
-      this.genus = this.species.genera.length > 0 ? this.species.genera.find(
-        (c: any) => c.language.name === 'en'
-      ).genus : "" ;
-
+      this.genus =
+        this.species.genera.length > 0
+          ? this.species.genera.find((c: any) => c.language.name === 'en').genus
+          : '';
 
       this.flavorText =
         this.species.flavor_text_entries.length > 0
