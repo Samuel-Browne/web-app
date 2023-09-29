@@ -24,13 +24,15 @@
       <div class="col-sm-6">
         <h1>{{ pokemon.name | uppercase }} {{ species.names[0].name }}</h1>
         <h1>{{ "#" + pokemon.id }}</h1>
-        <!-- <p *ngFor="let type of pokemon.types" ngClass="">
-          {{ type.type.name | uppercase }}
-        </p> -->
-        <img
+        <p>
+          <ng-container *ngFor="let type of pokemon.types" ngClass="">
+            {{ type.type.name | uppercase }}
+          </ng-container>
+        </p>
+        <!-- <img
           *ngFor="let type of pokemon.types"
           src="/assets/{{ type.type.name | lowercase }}.png"
-        />
+        /> -->
         <div>
           <h1>{{ genus }}</h1>
         </div>
@@ -70,27 +72,27 @@
           </thead>
           <tbody>
             <tr>
-              <th>HP</th>
+              <td>HP</td>
               <td>{{ pokemon.stats[0].base_stat }}</td>
             </tr>
             <tr>
-              <th>ATTACK</th>
+              <td>ATTACK</td>
               <td>{{ pokemon.stats[1].base_stat }}</td>
             </tr>
             <tr>
-              <th>DEFENSE</th>
+              <td>DEFENSE</td>
               <td>{{ pokemon.stats[2].base_stat }}</td>
             </tr>
             <tr>
-              <th>SPECIAL ATTACK</th>
+              <td>SPECIAL ATTACK</td>
               <td>{{ pokemon.stats[3].base_stat }}</td>
             </tr>
             <tr>
-              <th>SPECIAL DEFENSE</th>
+              <td>SPECIAL DEFENSE</td>
               <td>{{ pokemon.stats[4].base_stat }}</td>
             </tr>
             <tr>
-              <th>SPEED</th>
+              <td>SPEED</td>
               <td>{{ pokemon.stats[5].base_stat }}</td>
             </tr>
           </tbody>
