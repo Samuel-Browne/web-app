@@ -5,9 +5,9 @@
       <button (click)="navigateBackwards($event)" type="button">
         Previous
       </button>
-      <img src="{{previousPokemon.sprites.front_default}}" class="img-fluid">
+      <img src="{{previousPokemon.sprites.front_default}}" class="img-fluid" title="{{(previousPokemon.name | titlecase) + ' (Pokémon)'}}">
       <button (click)="navigateForwards($event)" type="button">Forward</button>
-      <img src="{{nextPokemon.sprites.front_default}}" class="img-fluid">
+      <img src="{{nextPokemon.sprites.front_default}}" class="img-fluid" title="{{(nextPokemon.name | titlecase) + ' (Pokémon)'}}">
     </div>
   </div>
 
