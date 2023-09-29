@@ -1,12 +1,16 @@
 <div *ngIf="pokemon && species" class="container mx-auto">
+
   <div class="row">
     <div class="col-sm-4">
       <button (click)="navigateBackwards($event)" type="button">
         Previous
       </button>
+      <img src="{{previousPokemon.sprites.front_default}}">
       <button (click)="navigateForwards($event)" type="button">Forward</button>
+      <img src="{{nextPokemon.sprites.front_default}}">
     </div>
   </div>
+
   <div class="row">
     <div class="col-sm-6">
       <h1>{{ pokemon.name | uppercase }} {{ species.names[0].name }}</h1>

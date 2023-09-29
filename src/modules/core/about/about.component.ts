@@ -13,6 +13,8 @@ export class AboutComponent {
   id: number;
   genus: string = '';
   flavorText: string = '';
+  nextPokemon: any;
+  previousPokemon: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -24,10 +26,25 @@ export class AboutComponent {
     };
 
     this.id = this.activatedRoute.snapshot.params['id'];
+
     this.pokemonService.getPokemonData(this.id).subscribe((data) => {
       this.pokemon = data;
       console.log(this.pokemon);
     });
+
+    if(this.id !== 1){
+    this.pokemonService.getPokemonData(this.id - 1).subscribe((data) => {
+      this.previousPokemon = data;
+      console.log(this.pokemon);
+    });
+  }
+
+  if(this.id !== 1017){
+    this.pokemonService.getPokemonData(this.id + 1).subscribe((data) => {
+      this.nextPokemon = data;
+      console.log(this.pokemon);
+    });
+  }
 
     this.pokemonService.getPokemonSpeciesData(this.id).subscribe((data) => {
       this.species = data;
